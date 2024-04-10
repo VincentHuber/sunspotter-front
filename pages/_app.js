@@ -5,7 +5,7 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Next.js App</title>
+        <title>Sunspotter identifie la ville de France offrant les meilleurs températures du weekend à venir.</title>
       </Head>
       <Component {...pageProps} />
     </>
@@ -13,3 +13,4 @@ function App({ Component, pageProps }) {
 }
 
 export default App;
+
