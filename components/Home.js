@@ -24,6 +24,9 @@ function Home() {
         setTemp(data.temp);
         setLat(data.lat);
         setLon(data.lon);
+        setImg1(data.img1);
+        setImg2(data.img2);
+        setImg3(data.img3);
         setText(data.text)
       })
       .catch((error) => {
@@ -39,9 +42,9 @@ function Home() {
       </p>
       <main className={styles.main}>
         <header className={styles.header}>
-          <Image
-            src="/mari1.png"
-            alt="Marignane"
+          <img
+            src={img1}
+            alt={city}
             width={358}
             height={180}
             className={styles.imageUp}
@@ -74,9 +77,9 @@ function Home() {
             
           </div>
           <div>
-            <Image
-              src="/mari3.png"
-              alt="Marignane"
+            <img
+              src={img3}
+              alt={city}
               width={380}
               height={503}
               className={styles.imageRight}
@@ -85,9 +88,9 @@ function Home() {
         </content>
 
         <div className={styles.containerImageDown}>
-          <Image
-                src="/mari2.png"
-                alt="Marignane"
+          <img
+                src={img2}
+                alt={city}
                 width={350}
                 height={200}
                 className={styles.imageDown}

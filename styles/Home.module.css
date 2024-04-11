@@ -56,10 +56,12 @@
 
 .imageUp {
   border-radius: 0 0 20px 20px;
+  width:358px;
 }
 
 .imageRight {
   border-radius: 20px;
+  width:380px;
 }
 
 .containerImageDown{
@@ -71,7 +73,7 @@
 
 .imageDown {
   border-radius: 20px 20px 0 0;
-  width: 100%; 
+  width:350px;
   height: auto; /* Hauteur automatique pour conserver les proportions */
   object-fit: cover; /* Redimensionne l'image pour qu'elle remplisse son conteneur en conservant ses proportions */
 }
