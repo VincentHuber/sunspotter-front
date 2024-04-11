@@ -24,42 +24,66 @@ function Home() {
   }, []);
 
   return (
-    <main className={styles.main}>
-      <header className={styles.header}>
-        <Image
-          src="/mari1.png"
-          alt="Marignane"
-          width={398}
-          height={200}
-          className={styles.image}
-        />
+    <div className={styles.firstContent}>
+      <main className={styles.main}>
+        <header className={styles.header}>
+          <Image
+            src="/mari1.png"
+            alt="Marignane"
+            width={398}
+            height={200}
+            className={styles.imageUp}
+          />
 
-        <div className={styles.headerRight}>
-          <div className={styles.buttonBox}>
-            <button className={styles.buttonMenu}>Home</button>
-            <button className={styles.buttonMenu}>À propos</button>
+          <div className={styles.headerRight}>
+            <div className={styles.buttonBox}>
+              <button className={styles.buttonMenu}>Home</button>
+              <button className={styles.buttonMenu}>À propos</button>
+            </div>
+            <div className={styles.tempBox}>
+              <h3 className={styles.tempTitle}>PRÉVISIONS CE WEEKEND</h3>
+              <h2 className={styles.temp}>35°</h2>
+            </div>
           </div>
-          <div className={styles.tempBox}>
-            <h3 className={styles.tempTitle}>PRÉVISIONS CE WEEKEND</h3>
-            <h2 className={styles.temp}>35°</h2>
-          </div>
-        </div>
-      </header>
+        </header>
 
-      <content className={styles.content}>
-        <div className={styles.info}>
-          <h1 className={styles.title}>CE WEEKEND, DIRECTION</h1>
-          <h1 className={styles.titleCity}>MARIGNANE</h1>
-          <p className={styles.text}>
-            Nichée entre mer et collines, cette ville provençale offre un
-            mélange de tradition et de modernité. Flânez dans son centre
-            historique où les ruelles étroites vous invitent à savourer des
-            spécialités locales dans ses cafés animés.
-          </p>
-          <button className={styles.buttonItinerary}>Voir l'itinéraire</button>
+        <content className={styles.content}>
+          <div className={styles.info}>
+            <h1 className={styles.title}>CE WEEKEND, DIRECTION</h1>
+            <h1 className={styles.titleCity}>MARIGNANE</h1>
+            <p className={styles.text}>
+              Nichée entre mer et collines, cette ville provençale offre un
+              mélange de tradition et de modernité. Flânez dans son centre
+              historique où les ruelles étroites vous invitent à savourer des
+              spécialités locales dans ses cafés animés.
+            </p>
+            <button className={styles.buttonItinerary}>Voir l'itinéraire</button>
+          </div>
+          <div>
+            <Image
+              src="/mari3.png"
+              alt="Marignane"
+              width={380}
+              height={503}
+              className={styles.imageRight}
+            />
+          </div>
+        </content>
+
+        <div className={styles.containerImageDown}>
+          <Image
+                src="/mari2.png"
+                alt="Marignane"
+                width={350}
+                height={239}
+                className={styles.imageDown}
+              />
         </div>
-      </content>
-    </main>
+      </main>
+      <div className="secondContent">
+
+      </div>
+    </div>
   );
 }
 
