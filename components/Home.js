@@ -2,6 +2,8 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Map from "./Map";
+import Arrow from "../public/arrow"
 
 function Home() {
   const [city, setCity] = useState("");
@@ -24,7 +26,7 @@ function Home() {
   }, []);
 
   return (
-    <div className={styles.firstContent}>
+    <div className={styles.container}>
       <main className={styles.main}>
         <header className={styles.header}>
           <Image
@@ -41,7 +43,7 @@ function Home() {
               <button className={styles.buttonMenu}>À propos</button>
             </div>
             <div className={styles.tempBox}>
-              <h3 className={styles.tempTitle}>PRÉVISIONS CE WEEKEND</h3>
+              <h3 className={styles.tempTitle}>PRÉVISIONS DU WEEKEND</h3>
               <h2 className={styles.temp}>35°</h2>
             </div>
           </div>
@@ -57,7 +59,11 @@ function Home() {
               historique où les ruelles étroites vous invitent à savourer des
               spécialités locales dans ses cafés animés.
             </p>
-            <button className={styles.buttonItinerary}>Voir l'itinéraire</button>
+            <button className={styles.buttonItinerary}>
+              <Arrow/>
+              <p>Voir l'itinéraire</p>
+            </button>
+            
           </div>
           <div>
             <Image
@@ -75,14 +81,12 @@ function Home() {
                 src="/mari2.png"
                 alt="Marignane"
                 width={350}
-                height={239}
+                height={237}
                 className={styles.imageDown}
               />
         </div>
       </main>
-      <div className="secondContent">
-
-      </div>
+      < Map/>
     </div>
   );
 }
