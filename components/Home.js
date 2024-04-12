@@ -1,10 +1,15 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Map from "./Map";
-import Arrow from "../public/arrow"
+import About from "./About";
+import Arrow from "../public/arrow";
+
 
 function Home() {
+  const mapRef = useRef();
+
+  const [showModal, setShowModal] = useState(false)
 
   const [city, setCity] = useState("");
   const [temp, setTemp] = useState("");
@@ -13,8 +18,8 @@ function Home() {
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
-  const [text, setText] = useState("")
- 
+  const [text, setText] = useState("");
+
   useEffect(() => {
     fetch(`http://localhost:3000/weather`)
       .then((response) => response.json())
@@ -35,10 +40,8 @@ function Home() {
 
   return (
     <div className={styles.container}>
-
-      <p className={styles.logo}>
-        SUNSPOTTER
-      </p>
+     {showModal && <About setShowModal={setShowModal}/>}
+      <p className={styles.logo}>SUNSPOTTER</p>
       <main className={styles.main}>
         <header className={styles.header}>
           <img
@@ -52,7 +55,12 @@ function Home() {
           <div className={styles.headerRight}>
             <div className={styles.buttonBox}>
               <button className={styles.buttonMenu}>Home</button>
-              <button className={styles.buttonMenu}>À propos</button>
+              <button onClick={()=> setShowModal(true)}
+                className={styles.buttonMenu}
+              >
+                À propos
+              </button>
+            
             </div>
             <div className={styles.tempBox}>
               <h3 className={styles.tempTitle}>PRÉVISIONS DU WEEKEND</h3>
@@ -66,11 +74,15 @@ function Home() {
             <h1 className={styles.title}>CE WEEKEND, DIRECTION</h1>
             <h1 className={styles.titleCity}>{city}</h1>
             <p className={styles.text}>{text}</p>
-            <button className={styles.buttonItinerary}>
-              <Arrow/>
+            <button
+              onClick={() => {
+                mapRef.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={styles.buttonItinerary}
+            >
+              <Arrow />
               <p>Voir la carte</p>
             </button>
-            
           </div>
           <div className={styles.containerImageRight}>
             <img
@@ -85,15 +97,17 @@ function Home() {
 
         <div className={styles.containerImageDown}>
           <img
-                src={img2}
-                alt={city}
-                width={350}
-                height={200}
-                className={styles.imageDown}
-              />
+            src={img2}
+            alt={city}
+            width={350}
+            height={200}
+            className={styles.imageDown}
+          />
         </div>
       </main>
-      < Map city={city}/>
+      <div ref={mapRef}>
+        <Map city={city} />
+      </div>
     </div>
   );
 }
