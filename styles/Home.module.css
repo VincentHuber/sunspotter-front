@@ -59,23 +59,25 @@
   width:358px;
 }
 
+.containerImageRight{
+max-width: 380px;
+}
+
 .imageRight {
   border-radius: 20px;
-  width:380px;
+  max-width:100%;
+  height: auto; 
 }
 
 .containerImageDown{
-  display: flex;
   margin-right: 300px;
-  height:auto;
-  overflow: hidden; /* Masque tout contenu qui dépasse de la limite du conteneur */
+  max-width: 350px;
 }
 
 .imageDown {
-  border-radius: 20px 20px 0 0;
-  width:350px;
-  height: auto; /* Hauteur automatique pour conserver les proportions */
-  object-fit: cover; /* Redimensionne l'image pour qu'elle remplisse son conteneur en conservant ses proportions */
+  border-radius: 20px;
+  max-width: 100%;
+  height: auto; 
 }
 
 
@@ -111,7 +113,7 @@
   border: none;
   padding: 0;
   height:35px;
-  width: 170px;
+  width: 160px;
   cursor: pointer;
   display:flex;
   align-items: center;

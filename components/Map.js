@@ -1,11 +1,17 @@
-import styles from '../styles/Map.module.css';
+import styles from "../styles/Map.module.css";
 
-function Map() {
+function Map(props) {
   return (
     <div className={styles.content}>
-        Carte
+      <iframe
+        className={styles.map}
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyAw0IfFrRnoLsktYUItRy9oTpqQOgMgEwM&q=${props.city}&zoom=12&maptype=roadmap`}
+      ></iframe>
     </div>
-  );
+  )
 }
 
-export default Map;
+export default Map

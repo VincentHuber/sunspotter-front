@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Map from "./Map";
 import Arrow from "../public/arrow"
 
@@ -27,7 +26,7 @@ function Home() {
         setImg1(data.img1);
         setImg2(data.img2);
         setImg3(data.img3);
-        setText(data.text)
+        setText(data.text);
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
@@ -66,17 +65,14 @@ function Home() {
           <div className={styles.info}>
             <h1 className={styles.title}>CE WEEKEND, DIRECTION</h1>
             <h1 className={styles.titleCity}>{city}</h1>
-            <p className={styles.text}>
-              {text}
-            {/* Explore ce charmant port de pêche du sud de la France. Réputé pour ses plages de galets et ses calanques escarpées, Cassis séduit avec ses bâtiments colorés et ses vignobles. */}
-                        </p>
+            <p className={styles.text}>{text}</p>
             <button className={styles.buttonItinerary}>
               <Arrow/>
-              <p>Voir l'itinéraire</p>
+              <p>Voir la carte</p>
             </button>
             
           </div>
-          <div>
+          <div className={styles.containerImageRight}>
             <img
               src={img3}
               alt={city}
@@ -97,7 +93,7 @@ function Home() {
               />
         </div>
       </main>
-      < Map/>
+      < Map city={city}/>
     </div>
   );
 }
