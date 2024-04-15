@@ -13,7 +13,7 @@ function Home() {
   const mapRef = useRef();
 
   //Pour afficher le composant Waiting
-   const [showWaiting, setshowWaiting] = useState(true)
+   const [showWaiting, setShowWaiting] = useState(true)
 
   //Pour afficher la modale
   const [showModal, setShowModal] = useState(false)
@@ -26,12 +26,12 @@ function Home() {
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
-  // https://sunspotter-back-73bl091u7-vincenthubers-projects.vercel.app
+  // https://sunspotter-back-jm57dss0k-vincenthubers-projects.vercel.app
   // https://localhost:3000/weather
 
   //Pour récupérer les informations du back
   useEffect(() => {
-    fetch(`https://sunspotter-back-jm57dss0k-vincenthubers-projects.vercel.app`)
+    fetch(`http://localhost:3000/weather`)
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
@@ -40,7 +40,9 @@ function Home() {
         setImg2(data.img2);
         setImg3(data.img3);
         setText(data.text);
-        setshowWaiting(data.showWaiting)
+        setShowWaiting(data.showWaiting)
+
+        console.log('showWaiting : ', showWaiting)
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
