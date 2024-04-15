@@ -13,7 +13,7 @@ function Home() {
   const mapRef = useRef();
 
   //Pour afficher le composant Waiting
-   const [showWaiting, setshowWaiting] = useState(false)
+   const [showWaiting, setshowWaiting] = useState(true)
 
   //Pour afficher la modale
   const [showModal, setShowModal] = useState(false)
@@ -48,6 +48,7 @@ function Home() {
     <div className={styles.container}>
 
      {showWaiting && <Waiting/>}
+     
      {showModal && <About setShowModal={setShowModal}/>}
 
       <p className={styles.logo}>SUNSPOTTER</p>
