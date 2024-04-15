@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p sunspotter-back-d3t6p0hrk-vincenthubers-projects.vercel.app",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p sunspotter-front-rlfzl4y32-vincenthubers-projects.vercel.app",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
