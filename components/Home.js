@@ -3,35 +3,41 @@ import styles from "../styles/Home.module.css";
 import { useEffect, useState, useRef } from "react";
 import Map from "./Map";
 import About from "./About";
+import Waiting from "./Waiting";
 import Arrow from "../public/arrow";
 
 
 function Home() {
+
+  //affichage de la map
   const mapRef = useRef();
 
+  //Pour afficher le composant Waiting
+   const [showWaiting, setshowWaiting] = useState(false)
+
+  //Pour afficher la modale
   const [showModal, setShowModal] = useState(false)
 
+  //Pour contenir toutes les informations du back
   const [city, setCity] = useState("");
   const [temp, setTemp] = useState("");
-  const [lat, setLat] = useState("");
-  const [lon, setLon] = useState("");
   const [img1, setImg1] = useState("");
   const [img2, setImg2] = useState("");
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
+  //Pour récupérer les informations du back
   useEffect(() => {
     fetch(`http://localhost:3000/weather`)
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
         setTemp(data.temp);
-        setLat(data.lat);
-        setLon(data.lon);
         setImg1(data.img1);
         setImg2(data.img2);
         setImg3(data.img3);
         setText(data.text);
+        setshowWaiting(data.showWaiting)
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
@@ -40,7 +46,10 @@ function Home() {
 
   return (
     <div className={styles.container}>
+
+     {showWaiting && <Waiting/>}
      {showModal && <About setShowModal={setShowModal}/>}
+
       <p className={styles.logo}>SUNSPOTTER</p>
       <main className={styles.main}>
         <header className={styles.header}>
