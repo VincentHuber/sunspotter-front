@@ -26,12 +26,11 @@ function Home() {
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
-  // https://sunspotter-back-jm57dss0k-vincenthubers-projects.vercel.app
   // https://localhost:3000/weather
 
   //Pour récupérer les informations du back
   useEffect(() => {
-    fetch(`http://localhost:3000/weather`)
+    fetch(`https://sunspotter-back.vercel.app`)
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
