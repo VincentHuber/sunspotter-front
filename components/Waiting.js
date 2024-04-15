@@ -19,7 +19,7 @@ export default function Waiting() {
       <p className={styles.explication}>
         Chaque mercredi, Sunspotter repère la destination la plus ensoleillée de
         France afin de te recommander une destination pour le weekend à venir. À
-        mercredi !
+        mercredi!
       </p>
 
     {/* IMAGES EN HAUT */}
