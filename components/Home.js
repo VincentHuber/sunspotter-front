@@ -26,6 +26,9 @@ function Home() {
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
+  // https://sunspotter-back-73bl091u7-vincenthubers-projects.vercel.app
+  // https://localhost:3000/weather
+
   //Pour récupérer les informations du back
   useEffect(() => {
     fetch(`https://sunspotter-back-73bl091u7-vincenthubers-projects.vercel.app`)
