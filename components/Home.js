@@ -31,7 +31,7 @@ function Home() {
 
   //Pour récupérer les informations du back
   useEffect(() => {
-    fetch(`https://sunspotter-back-73bl091u7-vincenthubers-projects.vercel.app`)
+    fetch(`https://sunspotter-back-jm57dss0k-vincenthubers-projects.vercel.app`)
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
