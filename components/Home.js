@@ -31,7 +31,6 @@ function Home() {
     fetch(`https://sunspotter-back.vercel.app/weather`)
       .then((response) => response.json())
       .then((data) => {
-        console.log("data : ", data)
         setCity(data.city);
         setTemp(data.temp);
         setImg1(data.img1);
