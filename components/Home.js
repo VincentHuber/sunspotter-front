@@ -43,8 +43,6 @@ function Home() {
         console.error("Erreur du fetch: ", error);
       });
   }, []);
-  console.log("city : ", city)
-  console.log("showWaiting : ", showWaiting)
 
   return (
     <div className={styles.container}>
