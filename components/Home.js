@@ -28,7 +28,7 @@ function Home() {
 
   //Pour récupérer les informations du back
   useEffect(() => {
-    fetch(`http://sunspotter-back.vercel.app/weather`)
+    fetch(`https://sunspotter-back.vercel.app/weather`)
       .then((response) => response.json())
       .then((data) => {
         console.log("data : ", data)
