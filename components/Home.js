@@ -13,7 +13,7 @@ function Home() {
   const mapRef = useRef();
 
   //Pour afficher le composant Waiting
-   const [showWaiting, setShowWaiting] = useState(true)
+   const [showWaiting, setShowWaiting] = useState(false)
 
   //Pour afficher la modale
   const [showModal, setShowModal] = useState(false)
