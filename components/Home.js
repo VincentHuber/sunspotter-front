@@ -13,7 +13,7 @@ function Home() {
   const mapRef = useRef();
 
   //Pour afficher le composant Waiting
-   const [showWaiting, setShowWaiting] = useState(false)
+   const [showWaiting, setShowWaiting] = useState(true)
 
   //Pour afficher la modale
   const [showModal, setShowModal] = useState(false)
@@ -32,19 +32,19 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
-        console.log("city : ", city)
         setTemp(data.temp);
         setImg1(data.img1);
         setImg2(data.img2);
         setImg3(data.img3);
         setText(data.text);
         setShowWaiting(data.showWaiting)
-        console.log("showWaiting : ", showWaiting)
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
       });
   }, []);
+  console.log("city : ", city)
+  console.log("showWaiting : ", showWaiting)
 
   return (
     <div className={styles.container}>
