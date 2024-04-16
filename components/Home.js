@@ -26,22 +26,19 @@ function Home() {
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
-  // https://localhost:3000/weather
-
   //Pour récupérer les informations du back
   useEffect(() => {
     fetch(`https://sunspotter-back.vercel.app/weather`)
       .then((response) => response.json())
       .then((data) => {
         setCity(data.city);
+        console.log("city : ", city)
         setTemp(data.temp);
         setImg1(data.img1);
         setImg2(data.img2);
         setImg3(data.img3);
         setText(data.text);
         setShowWaiting(data.showWaiting)
-
-        console.log('showWaiting : ', showWaiting)
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
