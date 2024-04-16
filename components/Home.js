@@ -26,6 +26,8 @@ function Home() {
   const [img3, setImg3] = useState("");
   const [text, setText] = useState("");
 
+  // http://sunspotter-back.vercel.app/weather
+
   //Pour récupérer les informations du back
   useEffect(() => {
     fetch(`https://sunspotter-back.vercel.app/weather`)
