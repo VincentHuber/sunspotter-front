@@ -39,6 +39,7 @@ function Home() {
         setImg3(data.img3);
         setText(data.text);
         setShowWaiting(data.showWaiting)
+        console.log("showWaiting : ", showWaiting)
       })
       .catch((error) => {
         console.error("Erreur du fetch: ", error);
